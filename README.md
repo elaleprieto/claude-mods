@@ -44,8 +44,8 @@ A trimmed take on [Image Preview](https://github.com/midudev/better-claude/tree/
 At the prompt of a Claude Code session:
 
 ```
-/plugin install sub-meter --marketplace aleprieto/claude-mods
-/plugin install image-preview --marketplace aleprieto/claude-mods
+/plugin install sub-meter --marketplace elaleprieto/claude-mods
+/plugin install image-preview --marketplace elaleprieto/claude-mods
 ```
 
 Answer `y` to add the marketplace, then pick a scope.
