@@ -1,0 +1,18 @@
+{
+  "name": "sub-meter",
+  "version": "0.1.0",
+  "description": "Subscription usage in the footer: the 5-hour and weekly windows take turns as a bar, with the time until each resets.",
+  "author": {
+    "name": "Ale Prieto"
+  },
+  "license": "MIT",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "rotateSeconds": {
+      "type": "number",
+      "title": "Rotate every (seconds)",
+      "description": "How long each window stays on screen before the next one.",
+      "default": 8
+    }
+  }
+}
