@@ -1,5 +1,8 @@
 {
   "name": "claude-mods",
   "owner": { "name": "Ale Prieto" },
-  "plugins": [{ "name": "sub-meter", "source": "./sub-meter" }]
+  "plugins": [
+    { "name": "sub-meter", "source": "./sub-meter" },
+    { "name": "image-preview", "source": "./image-preview" }
+  ]
 }

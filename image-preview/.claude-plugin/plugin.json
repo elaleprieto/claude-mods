@@ -1,0 +1,10 @@
+{
+  "name": "image-preview",
+  "version": "0.1.0",
+  "description": "Hover a pasted [Image #N] and the picture opens in a small window by the pointer; click it to open it in Preview. macOS.",
+  "author": {
+    "name": "Ale Prieto"
+  },
+  "license": "MIT",
+  "types": "./types/index.d.ts"
+}
