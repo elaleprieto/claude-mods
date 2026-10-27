@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Runs the check before anything is pushed. Enable once per clone with
+#   git config core.hooksPath .githooks
+exec "$(git rev-parse --show-toplevel)/<check-command>"

@@ -3,6 +3,7 @@
   "owner": { "name": "Ale Prieto" },
   "plugins": [
     { "name": "sub-meter", "source": "./sub-meter" },
-    { "name": "image-preview", "source": "./image-preview" }
+    { "name": "image-preview", "source": "./image-preview" },
+    { "name": "ale", "source": "./skills" }
   ]
 }

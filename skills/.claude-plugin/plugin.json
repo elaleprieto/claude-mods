@@ -1,0 +1,9 @@
+{
+  "name": "ale",
+  "version": "0.1.0",
+  "description": "Skills for agent-driven development: repo baselines (JS/TS coding style, agent workflow), spec implementation in parallel rounds, worktree integration and quick wins.",
+  "author": {
+    "name": "Ale Prieto"
+  },
+  "license": "MIT"
+}

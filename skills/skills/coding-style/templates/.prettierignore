@@ -1,0 +1,8 @@
+pnpm-lock.yaml
+.pnpm-store/
+**/.next/
+**/dist/
+**/next-env.d.ts
+# Docs are hand-formatted.
+*.md
+*.html

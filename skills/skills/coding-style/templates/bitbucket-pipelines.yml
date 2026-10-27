@@ -1,0 +1,31 @@
+image: node:22
+
+definitions:
+  caches:
+    pnpm: /root/.local/share/pnpm/store
+  steps:
+    - step: &checks
+        name: Lint, format, type-check, test
+        caches:
+          - pnpm
+        script:
+          # Stop corepack from prompting before it downloads the pnpm version in package.json.
+          - export COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+          - corepack enable
+          # Keep the store outside the clone so lint/format never walk it; matches the cache path.
+          - pnpm config set store-dir /root/.local/share/pnpm/store
+          # LEFTHOOK=0 skips installing git hooks in CI.
+          - LEFTHOOK=0 pnpm install --frozen-lockfile
+          - pnpm lint
+          - pnpm format:check
+          - pnpm type-check
+          # DB-backed integration tests skip here: CI has no DATABASE_URL.
+          - pnpm test
+
+pipelines:
+  pull-requests:
+    '**':
+      - step: *checks
+  branches:
+    main:
+      - step: *checks

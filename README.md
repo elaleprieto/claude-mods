@@ -69,3 +69,17 @@ claude plugin test sub-meter       # the *.test.ts(x) files under sub-meter/hook
 To type-check, load the mod once so Claude Code writes its types to `sub-meter/.claude-plugin/types/` (ignored by git), then run `tsc -p sub-meter`.
 
 The hooks API is early access and may change between Claude Code releases.
+
+## ale (skills)
+
+Skills for agent-driven development, in `skills/`. Invoke them as `/ale:<skill>`.
+
+| Skill | What it does |
+| --- | --- |
+| `coding-style` | Audits a JS/TS repo's tooling baseline (pnpm, Prettier, oxlint + ESLint, strict tsconfig, Vitest, Lefthook, axe, CI) and brings it up to it. |
+| `agent-workflow` | Audits a repo's agent workflow: Sonnet (low) implementers in worktrees off an integration branch, Opus (medium) two-axis review, the check command and its hook. |
+| `implement-rounds` | Implements the rounds agreed in a session with parallel implementers in worktrees, a review per round and one commit per round. |
+| `integrate-worktree` | Rebases the current worktree branch onto its target, runs the checks, fast-forwards and cleans up. |
+| `quick-wins` | Picks short, high-impact tasks from the repo's priorities doc. |
+
+`coding-style` and `agent-workflow` each carry an `audit.mjs` (one deterministic check per rule) and the `templates/` that make the checks pass.

@@ -1,0 +1,13 @@
+# Git hooks (https://lefthook.dev). Installed by `pnpm install` via lefthook's postinstall.
+pre-commit:
+  piped: true
+  jobs:
+    - name: prettier
+      run: pnpm exec prettier --write --ignore-unknown {staged_files}
+      stage_fixed: true
+    - name: oxlint
+      glob: '*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
+      run: pnpm exec oxlint {staged_files}
+    - name: eslint
+      glob: '*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
+      run: pnpm exec eslint --no-warn-ignored {staged_files}
