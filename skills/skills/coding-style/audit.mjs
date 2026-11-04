@@ -163,7 +163,8 @@ const ciFiles = [
 const ciText = ciFiles.map(readText).filter(Boolean).join('\n');
 const agentsDoc = readText('AGENTS.md');
 const usesPlaywright = '@playwright/test' in allDeps;
-const playwrightConfig = readText(firstExisting(['playwright.config.ts', 'playwright.config.mts', 'playwright.config.js']) ?? '') ?? '';
+const playwrightConfigFile = firstExisting(['playwright.config.ts', 'playwright.config.mts', 'playwright.config.js']);
+const playwrightConfig = (playwrightConfigFile && readText(playwrightConfigFile)) ?? '';
 const playwrightTestDir = /testDir:\s*['"]([^'"]+)['"]/.exec(playwrightConfig)?.[1] ?? 'tests';
 
 // Every *.spec.* file under a directory, recursively.
